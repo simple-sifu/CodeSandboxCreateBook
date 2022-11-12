@@ -8,4 +8,8 @@ export default class BooksPresenter {
     });
     return booksVm;
   };
+
+  createBook = async () => {
+    await booksRepository.createBook();
+  };
 }
