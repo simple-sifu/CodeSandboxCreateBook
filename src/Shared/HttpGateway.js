@@ -7,9 +7,12 @@ export default class HttpGateway {
   post = async (path) => {
     const response = await fetch(path, {
       method: "POST",
-      body: {
+      body: JSON.stringify({
         name: "my private book",
         author: "Tommy Han",
+      }),
+      headers: {
+        "Content-Type": "application/json",
       },
     });
     return response.json();
